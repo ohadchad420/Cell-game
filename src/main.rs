@@ -146,7 +146,7 @@ fn main() {
     draw_string(&"> ohadchad420", 545, 505 + 12, &mut canvas);
 
     draw_string(&"^/~:move between tabs. </>:change value. LSHIFT:higher precision.", 8, 7, &mut canvas);
-    draw_string(&"R:randomize values.+LSHIFT:reinit atoms.+CTRL:keep values. reinit atoms.", 8, 535, &mut canvas);
+    draw_string(&"R:randomize values. +LSHIFT:reinit atoms. +CTRL:keep values and reinit atoms.", 8, 535, &mut canvas);
     
 
     let mut button_vec: Vec<ui::button> = vec![ red_b1, red_b2, red_b3, red_b4, red_b5,
@@ -432,7 +432,7 @@ pub fn render_button(button: &ui::button, canvas: &mut sdl2::render::Canvas<sdl2
 }
 
 fn change_active_button(val: f32, precision: u8, button: &mut ui::button) -> f32 {
-    let mut change_val = val / precision as f32;
+    let change_val = val / precision as f32;
     button.add_value(change_val);
     return button.val();
 }
